@@ -1,9 +1,22 @@
+import { NexusGenEnums } from './nexus-typegen'
+
+export type Perms = NexusGenEnums['City'][]
+
 export interface DBOneEntry {
   age: number
-  city: string
+  city: NexusGenEnums['City']
   firstName: string
   id: string
   lastName: string
+  state: string
+}
+
+export type ReqCtx = {
+  perms: Perms
+}
+
+export type UpdateEntryArgs = {
+  city: NexusGenEnums['City']
   state: string
 }
 
@@ -17,7 +30,7 @@ export interface DBTwoEntry {
   }
   age: number
   location: {
-    city: string
+    city: NexusGenEnums['City']
     state: string
   }
 }
@@ -32,7 +45,9 @@ export type NormalizedEntry = {
     age: number
   }
   location: {
-    city: string
+    city: NexusGenEnums['City']
     state: string
   }
 }
+
+export type DBMigrationMap = Record<string, boolean>

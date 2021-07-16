@@ -1,0 +1,12 @@
+{
+  "id": "4",
+  "customer": {
+    "firstName": "He",
+    "lastName": "Man",
+    "age": 31
+  },
+  "location": {
+    "city": "Somewhere",
+    "state": "Belongs"
+  }
+}

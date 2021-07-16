@@ -7,7 +7,7 @@
     },
     "age": 42,
     "location": {
-      "city": "San Francisco",
+      "city": "SanFrancisco",
       "state": "CA"
     }
   }
