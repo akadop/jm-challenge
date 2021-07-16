@@ -3,7 +3,7 @@ import { DBMigrationMap, DBOneRecords, DBTwoRecords, NormalizedEntry, UpdateEntr
 import { normalizeDBOneEntry, normalizeDBTwoEntry } from './normalize'
 
 const DB_ONE = 'https://api.jsonbin.io/b/60f1cc76c1256a01cb70c2ac'
-const DB_TWO = 'https://api.jsonbin.io/b/60f1cbfda917050205c8f724'
+const DB_TWO = 'https://api.jsonbin.io/b/60f1fd770cd33f7437ca0dcb'
 const DB_CHECK_ENDPOINT = 'https://api.jsonbin.io/b/60f1d49aa917050205c8fd4c'
 const UPDATE_ENDPOINT = 'https://api.jsonbin.io/b/60f1eca5a917050205c90bb6'
 
