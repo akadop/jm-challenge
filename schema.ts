@@ -1,6 +1,6 @@
 import path from 'path'
-import { makeSchema, fieldAuthorizePlugin, objectType, stringArg, nonNull, inputObjectType, enumType, arg } from 'nexus'
-import { getEntry, updateEntry } from './db'
+import { makeSchema, fieldAuthorizePlugin, objectType, stringArg, nonNull, enumType, arg } from 'nexus'
+import { getEntry } from './db'
 import { ReqCtx, UpdateEntryArgs } from './types'
 
 interface GetEntryArgs {
@@ -16,15 +16,15 @@ const MutationType = objectType({
   name: 'Mutation',
   definition(t) {
     t.field('updateEntryCity', {
-      type: 'Entry',
+      type: 'Boolean',
       args: {
         state: nonNull(stringArg()),
         city: nonNull(arg({ type: 'City' }))
       },
       authorize: (_, args: UpdateEntryArgs, ctx: ReqCtx) => ctx.perms.includes(args.city),
-      resolve: async (_, args: UpdateEntryArgs) => {
-        const { data } = await updateEntry(args)
-        return data
+      resolve: (_, args, ctx) => {
+        console.log(ctx)
+        return true
       }
     })
   }

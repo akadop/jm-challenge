@@ -27,7 +27,7 @@ type Location {
 }
 
 type Mutation {
-  updateEntryCity(city: City!, state: String!): Entry
+  updateEntryCity(city: City!, state: String!): Boolean
 }
 
 type Query {

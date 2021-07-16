@@ -4,7 +4,7 @@
  */
 
 
-import { FieldAuthorizeResolver } from "nexus/dist/plugins/fieldAuthorizePlugin"
+import type { FieldAuthorizeResolver } from "nexus/dist/plugins/fieldAuthorizePlugin"
 
 
 
@@ -73,7 +73,7 @@ export interface NexusGenFieldTypes {
     state: string; // String!
   }
   Mutation: { // field return type
-    updateEntryCity: NexusGenRootTypes['Entry'] | null; // Entry
+    updateEntryCity: boolean | null; // Boolean
   }
   Query: { // field return type
     getEntry: NexusGenRootTypes['Entry'] | null; // Entry
@@ -96,7 +96,7 @@ export interface NexusGenFieldTypeNames {
     state: 'String'
   }
   Mutation: { // field return type name
-    updateEntryCity: 'Entry'
+    updateEntryCity: 'Boolean'
   }
   Query: { // field return type name
     getEntry: 'Entry'
@@ -176,6 +176,8 @@ export interface NexusGenTypes {
 
 declare global {
   interface NexusGenPluginTypeConfig<TypeName extends string> {
+  }
+  interface NexusGenPluginInputTypeConfig<TypeName extends string> {
   }
   interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
     /**

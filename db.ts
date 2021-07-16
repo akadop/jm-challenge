@@ -10,7 +10,8 @@ const UPDATE_ENDPOINT = 'https://api.jsonbin.io/b/60f1eca5a917050205c90bb6'
 export async function getDBOneEntries(): Promise<AxiosResponse<DBOneRecords>> {
   return await axios.get<DBOneRecords>(DB_ONE, {
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'X-Master-Key': process.env.SECRET
     }
   })
 }
@@ -18,7 +19,8 @@ export async function getDBOneEntries(): Promise<AxiosResponse<DBOneRecords>> {
 export async function getDBTwoEntries(): Promise<AxiosResponse<DBTwoRecords>> {
   return await axios.get<DBTwoRecords>(DB_TWO, {
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'X-Master-Key': process.env.SECRET
     }
   })
 }
@@ -26,7 +28,8 @@ export async function getDBTwoEntries(): Promise<AxiosResponse<DBTwoRecords>> {
 export async function getDBMap(): Promise<AxiosResponse<DBMigrationMap>> {
   return await axios.get<DBMigrationMap>(DB_CHECK_ENDPOINT, {
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'X-Master-Key': process.env.SECRET
     }
   })
 }
@@ -51,13 +54,14 @@ export async function getEntry(id: string): Promise<NormalizedEntry | null> {
   return null
 }
 
-export async function updateEntry(patch: UpdateEntryArgs): Promise<AxiosResponse<NormalizedEntry>> {
-  return await axios.patch<NormalizedEntry>(UPDATE_ENDPOINT, {
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: {
-      location: patch
-    }
-  })
-}
+// export async function updateEntry(patch: UpdateEntryArgs): Promise<AxiosResponse<NormalizedEntry>> {
+//   return await axios.patch<NormalizedEntry>(UPDATE_ENDPOINT, {
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'X-Master-Key': process.env.SECRET
+//     },
+//     body: {
+//       location: patch
+//     }
+//   })
+// }

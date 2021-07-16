@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --no-notify api/app",
+    "dev": "ts-node-dev --transpile-only --no-notify server.ts",
     "build": "tsc",
     "generate": "ts-node --transpile-only api/schema",
     "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json schema.ts",
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "apollo-server-express": "3.0.0",
+    "apollo-server-express": "2.16.1",
     "gql-auth-directives": "1.0.2",
     "express": "^4.17.1",
     "graphql": "^15.5.1",
