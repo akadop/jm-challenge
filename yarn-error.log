@@ -1,0 +1,70 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenSSL\bin;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Users\aka\AppData\Local\Programs\Microsoft VS Code\bin;C:\Python27;C:\Users\aka\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Users\aka\AppData\Local\Microsoft\WindowsApps;C:\Users\aka\AppData\Local\Yarn\bin;C:\Users\aka\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.17.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@vercel: Request "https://registry.yarnpkg.com/@vercel" returned a 405
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66106:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140749:22)
+      at Request.emit (events.js:375:28)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141721:10)
+      at Request.emit (events.js:375:28)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141643:12)
+      at Object.onceWrapper (events.js:481:28)
+      at IncomingMessage.emit (events.js:387:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+      "name": "backend-challenge",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "build": "tsc",
+        "dev": "tsnd index.ts",
+        "generate:nexus": "ts-node --transpile-only -P prisma/nexus.tsconfig.json pages/api",
+        "start": "node index.js"
+      },
+      "prettier": {
+        "arrowParens": "avoid",
+        "printWidth": 120,
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "none"
+      },
+      "keywords": [],
+      "license": "ISC",
+      "devDependencies": {
+      "@vercel": "latest",
+        "@nexus/schema": "0.20.1",
+        "@types/faker": "^5.5.7",
+        "@types/node": "^16.3.2",
+        "faker": "^5.5.3",
+        "prettier": "2.3.2",
+        "ts-node": "^10.1.0",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.3.5"
+      },
+      "dependencies": {
+        "graphql": "15.5.1"
+      }
+    }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
